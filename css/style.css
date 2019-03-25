@@ -1,0 +1,156 @@
+.section-box{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.section-inner{
+    display: block;
+    position: relative;
+}
+.hdr-wrap{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.hdr-inner{
+    position: relative;
+    max-width: 960px;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+.box{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.box-inner{
+    position: relative;
+    display: block;
+}
+/* header-logo */
+.header{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+.space-padding{
+    padding: 20px 0 20px 0;
+}
+/* Logo */
+.box-logo{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+.logo{
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+.logo h1{
+    display: block;
+    width: 100%;
+}
+.logo img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* Box-Order */
+.box-order{
+    display: inline-block;
+    float: right;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+.box-order ul{
+    list-style-type: none;
+}
+.box-order li{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0 -3px;
+}
+.box-order li a{
+    width: auto;
+    height: auto;
+    padding: 10px 25px;
+    background-color: #fff;
+    line-height: 30px;
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.box-order li:first-child a{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.box-order li:last-child a{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.box-order li a:hover{
+    color: #fff;
+    background-color: #0096ff;
+    border: 1px solid #0096ff;
+}
+.box-order li.active a{
+    color: #fff;
+    background-color: #0096ff;
+    border: 1px solid #0096ff;
+}
+/* Video */
+.bg-tv{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.bg-tv img{
+    display: block;
+    width: 100%;
+}
+.wrap{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* .bg-video{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.bg-video video{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+} */
+.video{
+    position: absolute;
+    width: 37.3%;
+    height: auto;
+    left: 31.6%;
+    top: 34.2%;
+}
+.video video{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
