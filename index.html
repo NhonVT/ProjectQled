@@ -7,8 +7,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/icon.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/jquery.fullPage.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/revealing.css">
 </head>
 <body>
     <!-- header -->
@@ -40,8 +43,11 @@
 
     <!-- content -->
     <div id="fullpage" class="section-box">
-        <div class="section">
+        <!-- section-1 -->
+        <div class="section section-1">
             <div class="panbox">
+                <span class="zoomOut"></span>
+                <span class="zoomIn"></span>
                 <div class="panzoom">
                     <div class="bg-tv">
                             <img src="./images/intro.jpg" alt="">
@@ -52,15 +58,84 @@
                         </video>
                     </div>
                 </div>
+                <div class="content-video">
+                    <div class="welcome random-fade">
+                        <h3>Chào mừng bạn đến với Q House</h3>
+                        <h3>Căn hộ chuẩn 5 sao thiết kế theo phim Hollywood</h3>
+                        <p>Lần đầu tiên tại Việt Nam, bạn sẽ có cơ hội sống trong căn hộ chuẩn 5 sao lấy cảm hứng thiết kế từ các bộ phim bom tấn <br> Hollywood, được tài trợ bởi QLED TV</p>
+                        <a href="javascript:void(0)" class="join">Tham Gia Ngay</a>
+                    </div>
+                    <div class="scroll-down">
+                        <a href="javascript:void(0);">
+                            <span>Kéo xuống để trải nghiệm Q-House</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
         </div>
+                <!-- section-2 -->
+        <div class="section section-2">
+            <div class="content-page2">
+                <div class="section-box">
+                    <div class="title-slogan">
+                        <h2>Lựa chọn căn phòng phù hợp với cá tính của bạn</h2>
+                    </div>
+                    <div class="section-inner">
+                        <div class="box-item-movie">
+                            <a href="javascript:void(0);">
+                                <div class="name-movie">
+                                    <p>Phim Nhạc Kịch</p>
+                                    <h3>THE GREATEST SHOWMAN</h3>
+                                    <p>Bậc Thầy Ước Mơ</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="box-item-movie bg-2">
+                            <a href="javascript:void(0);">
+                                <div class="name-movie">
+                                    <p>Phim Kinh Dị</p>
+                                    <h3>PREFUME: THE STORY OF A NUMBER</h3>
+                                    <p>XÁC ƯỚP NƯỚC HOA</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <!--/ content  -->
+
+    <!-- popup -->
+    <div class="popup-location">
+        <div class="box center">
+            <div class="title-location">
+                <h3>VUI LÒNG CHỌN ĐỊA ĐIỂM <br> GẦN BẠN NHẤT</h3>
+                <p>Thao tác này sẽ giúp bạn biết chính xác khu vực<br> bạn có thể đăng ký tham gia.</p>
+            </div>
+            <div class="location">
+                <div class="icon-location sqled-icon-hcmcity"></div>
+                <div class="position-location">
+                    <p><span class="sqled-icon-location"></span>Hồ Chí Minh</p>
+                </div>
+            </div>
+            <div class="location">
+                <div class="icon-location sqled-icon-hanoi"></div>
+                <div class="position-location">
+                    <p><span class="sqled-icon-location"></span>Hà Nội</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ popup  -->
     
     <script src="./js/jquery-min.js"></script>
     <script src="./js/jquery.fullPage.js"></script>
+    <script src="./js/jquery.revealing.js"></script>
     <script src="./js/jquery.panzoom.js"></script>
     <script src="./js/main.js"></script>
+  
 </body>
 </html>

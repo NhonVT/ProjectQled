@@ -31,11 +31,11 @@ html, body{
 	background:#fff;
 	color:#333;
 	line-height:1;
-	/* -webkit-touch-callout:none;
+	-webkit-touch-callout:none;
 	-webkit-user-select:none;
 	-khtml-user-select:none;
 	-moz-user-select:-moz-none;
-	-ms-user-select:none; */
+	-ms-user-select:none;
 	font-size:100%;
 	font-family:'Roboto Condensed', sans-serif;
 }

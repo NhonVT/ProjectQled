@@ -30,6 +30,9 @@
     position: relative;
     display: block;
 }
+/* .section-1{
+    display: none!important;
+} */
 /* header-logo */
 .header{
     position: fixed;
@@ -112,6 +115,9 @@
     border: 1px solid #0096ff;
 }
 /* Video */
+/* .content-video{
+    display: none;
+} */
 .bg-tv{
     position: relative;
     display: block;
@@ -128,20 +134,19 @@
     width: 100%;
     height: 100%;
 }
-
-/* .bg-video{
+.panbox{
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
 }
-.bg-video video{
+.panzoom{
+    display: block;
     position: relative;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-} */
+    top: -170px;
+    width: 100%;
+    height: auto;
+}
 .video{
     position: absolute;
     width: 37.3%;
@@ -149,8 +154,288 @@
     left: 31.6%;
     top: 34.2%;
 }
+.video::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
 .video video{
     display: block;
     width: 100%;
     height: 100%;
 }
+.welcome{
+    display: inline-block;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    z-index: 3;
+    top: 30%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.welcome h3{
+    margin-bottom: 5px;
+    font-family: "iCielSamsungSharpSansBold", arial;
+    font-size: 34px;
+    color: #fff;
+}
+.welcome p{
+    font-size: 18px;
+    font-family: "SamsungOne", arial;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: none;
+}
+.welcome .join{
+    position: relative;
+    display: none;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 16px;
+    border-radius: 32px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    top: 30px;
+    
+}
+.scroll-down{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    bottom: 42%;
+    left: 0;
+    z-index: 3;
+}
+.scroll-down a{
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+.scroll-down span{
+    display: block;
+    width: auto;
+    height: auto;
+}
+.scroll-down i{
+    display: inline-block;
+}
+
+@keyframes scroll-down{
+    0%{
+        transform: translateY(-50%);
+        }
+    50%{
+        transform: translateY(0);
+        }
+    100%{
+        transform: translateY(-50%);
+        }
+}
+
+.scroll-down{
+    animation: scroll-down 3s infinite 0s linear;
+}
+
+/* Popup */
+.popup-location{
+    position: fixed;
+    display: block;
+    left: 0;
+    top: 67px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+    overflow: hidden;
+}
+.popup-location.hide{
+    display: none;
+}
+.title-location{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.title-location h3{
+    font-size: 30px;
+}
+.title-location p{
+    font-size: 17px;
+    margin-top: 20px;
+}
+.position-location{
+    color: #fff;
+    margin-top: 9px;
+}
+.position-location span{
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+    font-size: 19px;
+}
+.center{
+    top: 300px;
+}
+.location{
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 32px 40px;
+    
+}
+.location::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+    opacity: 0;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.location:hover:before{
+    opacity: 1;
+}
+.icon-location{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    font-size: 100px;
+    color: #fff;
+}
+.random-fade span{
+    opacity:0;
+}
+.random-fade.move span{
+    -webkit-animation: fadeInOut;
+    animation: fadeInOut;
+    -webkit-animation-duration:1s;
+    animation-duration:1s;
+    -webkit-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes fadeInOut{
+  0%{opacity:0}
+  25%{opacity:0.5}
+  50%{opacity:0.25}
+  70%{opacity:0.5}
+  90%{opacity:0.25}
+  100%{opacity:1}
+}
+  
+@keyframes fadeInOut{
+  0%{opacity:0}
+  25%{opacity:0.5}
+  50%{opacity:0.25}
+  70%{opacity:0.5}
+  90%{opacity:0.25}
+  100%{opacity:1}
+}
+/* Section-2 */
+.section-2{
+    display: none;
+}
+.content-page2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 76px;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.title-slogan{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+.title-slogan h2{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.4;
+    color: #000;
+    font-size: 24px;
+    font-family: "iCielSamsungSharpSansMedium", arial;
+}
+.box-item-movie{
+    display: inline-block;;
+    position: relative;
+    width: 50%;
+    height: calc(100vh - 142px);
+    background: url(../images/bac-thay-uoc-mo.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    float: left;
+}
+.bg-2{
+    background: url(../images/xac-uop-nuoc-hoa.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.box-item-movie a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+.box-item-movie a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.box-item-movie a:hover::before{
+    transition: 1s;
+    background-color: rgba(255, 255, 255, 0);;
+}
+.name-movie{
+    position: absolute;
+    left: 50%;
+    bottom: 90px;
+    display: block;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+.name-movie p{
+    font-family: "iCielSamsungSharpSansBold", arial;
+    font-size: 24px;
+}
+.name-movie h3{
+    font-family: "iCielSamsungSharpSansBold", arial;
+    font-size: 34px;
+    margin: 7px 0;
+    line-height: 1.2;
+}
+
+
