@@ -36,9 +36,9 @@ html.fp-enabled,
     transition: all 0.3s ease-out;
 }
 .fp-section.fp-table, .fp-slide.fp-table {
-    display: table;
+    /* display: table;
     table-layout:fixed;
-    width: 100%;
+    width: 100%; */
 }
 .fp-tableCell {
     display: table-cell;
