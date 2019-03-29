@@ -122,10 +122,13 @@ body{
     display: none;
 } */
 .content-page1{
-    position: relative;
+    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 67px;
 }
 .bg-tv{
     position: relative;
@@ -187,16 +190,15 @@ body{
     text-align: center;
 }
 .welcome{
-    display: inline-block;
+    display: block;
     position: absolute;
     color: white;
     width: 100%;
     height: auto;
     text-align: center;
     z-index: 3;
-    top: 28%;
+    top: 23%;
     left: 0;
-    transform: translateY(-50%);
     transition: all 1s ease-in-out;
 }
 .welcome h3{
@@ -255,6 +257,35 @@ body{
 }
 .scroll-down i{
     display: inline-block;
+}
+.logo-fim{
+    position: absolute;
+    top: 25px;
+    right: 85px;
+    width: 75px;
+    height: auto;
+    display: none;
+}
+.logo-fim img{
+    display: inline-block;
+    width: 100%;
+}
+.sound{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+}
+.none-mute{
+    display: inline-block;
+    width: 100%;
+}
+.mute{
+    display: none;
+    width: 100%;
 }
 
 @keyframes scroll-down{
@@ -316,7 +347,8 @@ body{
     font-size: 19px;
 }
 .center{
-    top: 300px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .location{
     display: inline-block;
@@ -382,6 +414,7 @@ body{
   90%{opacity:0.25}
   100%{opacity:1}
 }
+
 /* Section-2 */
 .section-2{
     display: none;
@@ -574,7 +607,6 @@ body{
     background-size: cover;
     cursor: pointer;
     z-index: 1;
- 
 }
 .key{
     display: inline-block;
@@ -637,8 +669,11 @@ body{
     transition: all 0.5s ease-out;
 }
 /* video 3d */
+/* @keyframes slideUp{
+    0%{height: calc(100vh - px);}
+    100%{height: calc(100vh - 67px);}
+} */
 .popup-video3d.active{
-    display: block;
     height: calc(100vh - 67px);
 }
 .popup-video3d{
@@ -657,6 +692,9 @@ body{
     top: 0;
     display: block;
     width: 100%;
+    height: 0;
+}
+.bg-video3d.active{
     height: 100%;
 }
 .fix-height{
@@ -664,6 +702,36 @@ body{
     width: 100%;
     height: 100%;
 }
+.jwplayer{
+    position: absolute;
+    display: block;
+    width: 100%!important;
+    height: 100%!important;
+    top: 50%!important;
+    transform: translateY(-50%)!important;
+}
+.jw-controls{
+    display:none;
+}
+.go-links{
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    text-align: center;
+}
+.go-links a{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    color: #fff;
+    font-family: "SamsungOne", arial;
+}
+
+
 
 
 
