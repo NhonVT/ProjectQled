@@ -86,15 +86,23 @@ var vid = document.getElementById('myVideo');
                 }
                 return false;
             }else if($(window).width() <= 900){
-                $('.panzoom').panzoom({
-                    disablePan: true,
-                    $zoomIn:(".zoomIn"),
-                    $zoomOut:(".zoomOut"),
-                    $reset:(".zoomClear"),
-                });
+                console.log('aaaaa');
+                if( $('.panzoom').length){
+                    $('.panzoom').panzoom({
+                        disablePan: true,
+                        disableZoom: true,
+                        $reset: $('.zoomClear'),
+                    });
+                }
+                if (nextIndex == 1) { 
+                    if(vid.paused){
+                        vid.play();
+                    }
+                }
                 if(nextIndex == 3){
                     return false;
                 }
+                $('scroll-down')
             }
 
         }
@@ -356,10 +364,17 @@ function navSilde(){
     var nav = document.querySelector('.navigation');
     var navLinks = document.querySelectorAll('.nav li');
     var butcolor = document.querySelectorAll('.button-res div');
-
+    var that = $('.button-res div');
     navresbutton.addEventListener('click',()=>{
         // Toggle Nav
         nav.classList.toggle('navigation-active');
+        if(that.hasClass('active')){
+            that.removeClass('active');
+        }
+        else{
+            that.addClass('active');
+        }
+
         // Animaton Links
         navLinks.forEach((link,index)=>{
             if(link.style.animation){
@@ -367,9 +382,11 @@ function navSilde(){
             }else{
                 link.style.animation = `navLinksFade 0.5s ease forwards ${index / 7+0.3}s`;
             }
+         
+            
         });
         // Toggle
-        navresbutton.classList.toggle('toggle');
+        navresbutton.classList.toggle('active');
         // butcolor.removeClass('active');
         // $('.button-res div').toggle('toggle');
     })
