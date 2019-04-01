@@ -60,6 +60,7 @@ var vid = document.getElementById('myVideo');
     
     })(jQuery);
 
+
 (function(){
   
     /* Full Page*/
@@ -74,25 +75,26 @@ var vid = document.getElementById('myVideo');
         onLeave: function(index, nextIndex, direction) {
             
             if($(window).width() > 900){
-                  if (nextIndex == 1) { 
-                        if(vid.paused){
-                            vid.play();
-                        }
-                    }
-                    //cancel scroll when to 
-                    if(nextIndex == 2){
-                        return false;
-                    }
-                return false;
-            }else if($(window).width() <= 900){
-                if(!srcolling){
-                    return false;
-                }else{
-                    if($(window).width() > $(window).height()){
-                        return false;
+                if (nextIndex == 1) { 
+                    if(vid.paused){
+                        vid.play();
                     }
                 }
-                  
+                    //cancel scroll when to 
+                if(nextIndex == 2){
+                    return false;
+                }
+                return false;
+            }else if($(window).width() <= 900){
+                $('.panzoom').panzoom({
+                    disablePan: true,
+                    $zoomIn:(".zoomIn"),
+                    $zoomOut:(".zoomOut"),
+                    $reset:(".zoomClear"),
+                });
+                if(nextIndex == 3){
+                    return false;
+                }
             }
 
         }
