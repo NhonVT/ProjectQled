@@ -326,7 +326,7 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,1);
     z-index: 0;
     overflow: hidden;
 }
@@ -559,7 +559,7 @@ body{
 .content-house{
     position: absolute;
     left: 0;
-    bottom: 6%;
+    bottom: 12%;
     display: block;
     width: 100%;
     height: auto;
@@ -784,6 +784,44 @@ body{
         transform: translateY(0px);
     }
 }
+.toggle .line1{
+    transform: rotate(-46deg) translate(-4px,5px)
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(46deg) translate(-4px,-6px)
+}
+
+.section-sp{
+    display: none;
+}
+.bg-movie-sp{
+    background: url(../images/bac-thay-bg-sp.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: none;
+}
+.bg-xac-uop-sp{
+    background: url(../images/xac-uop-hoa-hong-bg-sp.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: none;
+}
+.bg-diep-vien-sp{
+    background: url(../images/diep-vien-bg-sp.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: none;
+}
+.bg-key-sp{
+    background: url(../images/key-over-sp.png) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: none;
+}
+
 
 
 /* Responsive */
@@ -821,17 +859,21 @@ body{
     .navigation{
         position: fixed;
         left: 0;
-        top: 0;
-        width: 0;
+        top: 100%;
+        width: 100%;
         height: 100vh;
         display: block;
         line-height: 1;
         text-align: center;
         z-index: 2;
         background-color: rgba(0,0,0,1);
+        opacity: 0;
     }
     .navigation-active{
+        opacity: 1;
+        top: 0;
         width: 100%;
+        transition: all 0.5s ease-out;
     }
     .nav{
         position: relative;
@@ -920,6 +962,185 @@ body{
     }
     .section-2{
         display: block;
+    }
+    /* section sp */
+    .section-sp{
+        display: block;
+    }
+    .bg-sp{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../images/intro-sp-bg.png) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .content-sp{
+        position: absolute;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .content-innr{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        text-align: center;
+        display: inline-block;
+        padding: 35px;
+    }
+    .title-content-sp h3{
+        margin-bottom: 5px;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 26px;
+    }
+    .title-content-sp{
+        display: block;
+        text-align: center;
+    }
+    .monitor{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        line-height: 0;
+        overflow: hidden;
+    }
+    .bg-monitor{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .gif-video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 90%;
+        text-align: center;
+    }
+    .gif-video img{
+        display: block;
+        width: 100%;
+    }
+    .content-innr p{
+        font-family: "SamsungOne", arial;
+        font-size: 16px;
+        display: block;
+        line-height: 1.6;    
+    }
+    .title-slogan{
+        height: 100px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 7;
+        line-height: 100px;
+        padding: 0;
+    }
+    .title-slogan h2{
+        font-size: 22px;
+    }
+    .section-inner-sp{
+        width: 100%;
+        height: calc(100vh - 160px);
+    }
+    .box-item-movie{
+        display: block;
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
+    .name-movie{
+        bottom: 50px;
+    }
+    .name-movie p{
+        font-size: 15px;
+    }
+    .name-movie h3{
+        font-size: 18px;
+    }
+    .box-item-movie a::before{
+        display: none;
+    }
+    /* slide 2 */
+    .text-house p{
+        font-size: 13px;
+    }
+    .title-house h3{
+        font-size: 26px;
+        width: 90%;
+        margin: 0 auto;
+        max-width: 295px;
+    }
+    .text-house{
+        width: 90%;
+    }
+    .back{
+        top: 1%;
+        padding: 15px 15px 15px 33px;
+    }
+    .back span{
+        font-size: 14px;
+    }
+    .back span::before{
+        width: 15px;
+        height: 18px;
+        top: 0;
+        left: -20px;
+    }
+    /*  */
+    .bg-movie{
+        display: none;
+    }
+    .bg-movie-sp{
+        display: block;
+    }
+    .bg-key{
+        display: none;
+    }
+    .bg-key-sp{
+        display: block;
+    }
+    .bg-xac-uop-sp{
+        display: block;
+    }
+    .bg-diep-vien-sp{
+        display: block;
+    }
+    .key{
+        width: 44%;
+        height: 40%;
+    }
+    .btn-360{
+        margin: 5px 0;
+        padding: 15px 15px 15px 40px;
+    }
+    .btn-360 span{
+        font-size: 15px;
+    }
+    .btn-360 span::before{
+        top: -3px;
+        left: -32px;
+        width: 25px;
+        height: 25px;    
+    }
+    .content-house{
+        bottom: 23%;
     }
 }
 

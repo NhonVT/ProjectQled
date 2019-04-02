@@ -5,6 +5,7 @@ var scrolling = false;
 
 
 var vid = document.getElementById('myVideo');
+var movie = $('.movie');
     
     function scrollDelay(){
         wheel = true;
@@ -72,7 +73,7 @@ var vid = document.getElementById('myVideo');
         autoScrolling:true,
         scrollBar: false,
         fitToSection: true,
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function(origin, nextIndex, direction) {
             
             if($(window).width() > 900){
                 if (nextIndex == 1) { 
@@ -86,34 +87,35 @@ var vid = document.getElementById('myVideo');
                 }
                 return false;
             }else if($(window).width() <= 900){
-                console.log('aaaaa');
-                if( $('.panzoom').length){
-                    $('.panzoom').panzoom({
-                        disablePan: true,
-                        disableZoom: true,
-                        $reset: $('.zoomClear'),
-                    });
-                }
-                if (nextIndex == 1) { 
-                    if(vid.paused){
-                        vid.play();
-                    }
-                }
-                if(nextIndex == 3){
+                if(!scrolling){
                     return false;
-                }
-                $('scroll-down')
+                }else{
+                    if (nextIndex == 1) { 
+                        if(vid.paused){
+                            vid.play();
+                        }
+                    }
+                    if(nextIndex == 4){
+                        return false;
+                    }
+                }      
             }
-
+            scrolling = true;
         }
     });
     
     if($(window).width() > $(window).height() && $(window).width() <= 1100){
         $('#fullpage').fullpage.setAutoScrolling(false);
-
-    }else{
+    }else{ 
         $('#fullpage').fullpage.setAutoScrolling(true);
     }
+
+    // if($(window).width()<=900){
+    //     $('#fullpage').fullpage.setAutoScrolling(false);
+        
+    // }
+
+
     
     function textMove(){
         var wheight = $(window).height();
@@ -182,7 +184,7 @@ var vid = document.getElementById('myVideo');
         });
         $('.panbox').on('wheel',function(e){
            
-            if(scroll){
+            if(scrolling){
                 if(!wheel){
                     return false;
                 }else{
@@ -262,13 +264,15 @@ var vid = document.getElementById('myVideo');
     })
 
     $('.box-item-movie').click(function(){
-        $('.section-2').fadeOut(200);
-        // save attr()
-        var moviego = $(this).attr('data-movie-go');
-        localStorage.setItem("moviego", moviego);
-        // call attr()
-        $('.movie[data-movie='+moviego+']').fadeIn(1000); 
-        $('.back').fadeIn(1800);
+        // if($(window).width() > 900){
+            $('.section-2').fadeOut(200);
+            // save attr()
+            var moviego = $(this).attr('data-movie-go');
+            localStorage.setItem("moviego", moviego);
+            // call attr()
+            $('.movie[data-movie='+moviego+']').fadeIn(1000); 
+            $('.back').fadeIn(1800);
+        
     });
 
     // button-back
@@ -340,22 +344,7 @@ var vid = document.getElementById('myVideo');
         vid.prop('mute',false);
     });
 
-    // $('.button-res').click(function(){
-    //     // $('.navigation').addClass('active');
-    //     // $('.button-res div').addClass('active');
-    //     // $('.nav li').addClass('active');
-    //     // $(this).toggle('.navigation-active');
-
-    //     $('.nav li').foreach((link,index)=>{
-    //         if($('.nav li').style.animation){
-    //             $('.nav li').style.animation = "";
-    //         }else{
-    //             $('.nav li').style.animation = `navLinksFade 0.5s ease forwards ${index / 4+0.3}s`;
-    //         }
-    //     });
-
-    //     $(this).toggle('toggle');
-    // });
+    // nav
     navSilde();
 
 })()
@@ -368,11 +357,18 @@ function navSilde(){
     navresbutton.addEventListener('click',()=>{
         // Toggle Nav
         nav.classList.toggle('navigation-active');
+
         if(that.hasClass('active')){
             that.removeClass('active');
+            $('.line1').css({'transform':'rotate(0) translate(0)','transition':'all 0.3s ease-out'});
+            $('.line2').css({'opacity':'1','transition':'all 0.3s ease-out'});
+            $('.line3').css({'transform':'rotate(0) translate(0)','transition':'all 0.3s ease-out'});
         }
         else{
             that.addClass('active');
+            $('.line1').css({'transform':'rotate(-46deg) translate(-4px,5px)','transition':'all 0.3s ease-out'});
+            $('.line2').css({'opacity':'0','transition':'all 0.3s ease-out'});
+            $('.line3').css({'transform':'rotate(46deg) translate(-7px,-9px)','transition':'all 0.3s ease-out'});
         }
 
         // Animaton Links
