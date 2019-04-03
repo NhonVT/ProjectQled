@@ -81,7 +81,7 @@ var movie = $('.movie');
                         vid.play();
                     }
                 }
-                    //cancel scroll when to 
+                //cancel scroll when to 
                 if(nextIndex == 2){
                     return false;
                 }
@@ -91,9 +91,16 @@ var movie = $('.movie');
                     return false;
                 }else{
                     if (nextIndex == 1) { 
+                        $('.scroll-down').fadeIn(100);
                         if(vid.paused){
                             vid.play();
                         }
+                    }
+                    if(nextIndex == 2){
+                        $('.scroll-down').fadeOut(100);
+                    }
+                    if(nextIndex == 3){
+                        $('.scroll-down').fadeOut(100);
                     }
                     if(nextIndex == 4){
                         return false;
@@ -193,7 +200,7 @@ var movie = $('.movie');
                         step++;
                         $(".zoomOut").trigger('click');
                         $('.join').fadeIn(2000);
-                        
+                        $('.monitor').addClass('active');
                     }else{
                         step--;
                         $(".zoomIn").trigger('click');
@@ -354,7 +361,9 @@ function navSilde(){
     var navLinks = document.querySelectorAll('.nav li');
     var butcolor = document.querySelectorAll('.button-res div');
     var that = $('.button-res div');
+    var godown = $('.scroll-down');
     navresbutton.addEventListener('click',()=>{
+        
         // Toggle Nav
         nav.classList.toggle('navigation-active');
 
@@ -370,6 +379,9 @@ function navSilde(){
             $('.line2').css({'opacity':'0','transition':'all 0.3s ease-out'});
             $('.line3').css({'transform':'rotate(46deg) translate(-7px,-9px)','transition':'all 0.3s ease-out'});
         }
+
+        // scroll
+        
 
         // Animaton Links
         navLinks.forEach((link,index)=>{

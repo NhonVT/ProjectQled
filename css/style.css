@@ -689,12 +689,14 @@ body{
 } */
 .popup-video3d.active{
     height: calc(100vh - 67px);
+    bottom: 0;
+    transition: all 0.5s ease-out;
 }
 .popup-video3d{
     position: fixed;
     display: block;
     left: 0;
-    bottom: 0;
+    bottom: -100%;
     width: 100%;
     height: auto;
     z-index: 0;
@@ -821,8 +823,30 @@ body{
     background-size: cover;
     display: none;
 }
+/* logo phim */
+.logo-fimplus{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 3;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url(../images/logo_fimplus.png) no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+}
 
-
+@keyframes scale-monitor{
+    0%{
+        transform: scale(1.5);
+        }
+    100%{
+        transform: scale(1);
+        }
+}
 
 /* Responsive */
 @media (max-width:576px){
@@ -1021,6 +1045,14 @@ body{
         line-height: 0;
         overflow: hidden;
     }
+    .monitor.active{
+        -webkit-animation: scale-monitor;
+        animation: scale-monitor;
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+    }
     .bg-monitor{
         display: block;
         width: 100%;
@@ -1143,6 +1175,1073 @@ body{
         bottom: 23%;
     }
 }
+
+@media (min-width: 576px) and (max-width: 768px){
+    .button-res{
+        width: 46px;
+        height: 46px;
+        display: block;
+    }
+    .button-res div{
+        width: 40px;
+    }
+    .box-order{
+        display: none;
+    }
+    .center{
+        padding: 20px;
+        width: 90%;
+    }
+    .title-location h3{
+        font-size: 24px;
+    }
+    .title-location p{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .icon-location{
+        font-size: 98px;
+    }
+    .position-location p{
+        font-size: 15px;
+    }
+    .location{
+        padding: 20px;
+    }
+    /* nav */
+    .navigation{
+        display: block;
+    }
+    .navigation{
+        position: fixed;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        line-height: 1;
+        text-align: center;
+        z-index: 2;
+        background-color: rgba(0,0,0,1);
+        opacity: 0;
+    }
+    .navigation-active{
+        opacity: 1;
+        top: 0;
+        width: 100%;
+        transition: all 0.5s ease-out;
+    }
+    .nav{
+        position: relative;
+        display: block;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .nav ul{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .nav li{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 25px 0;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        opacity: 0;
+    }
+    .nav li.active{
+        opacity: 1;
+    }
+    
+    .nav li:first-child{
+        margin-bottom: 60px;
+    }
+    .buy-qled{
+        border-radius: 80px;
+        border: 2px solid #fff;
+        padding: 33px 60px 30px 60px;
+    }
+    .nav a{
+        display: inline-block;
+        width: auto;
+        height: auto;    
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+    /* Section 1 */
+    .welcome{
+        width: 90%;
+        height: auto;
+        top: auto;
+        max-width: 1000px;
+        transform: translate3d(0px, 0px, 0px)!important;
+    }
+    .welcome h3{
+        font-size: 40px;
+    }
+    .welcome p{
+        display: none!important;
+    }
+    .join{
+        display: none!important;
+    }
+    .bg-tv{
+        display: none;
+    }
+    .panzoom{
+        position: absolute;
+        left: auto;
+        top: auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-top: 0!important;
+        transform: matrix(3.3, 0, 0, 3.3, 0, 0)!important;
+    }
+    .video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .section-2{
+        display: block;
+    }
+    /* section sp */
+    .section-sp{
+        display: block;
+    }
+    .bg-sp{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../images/intro-sp-bg.png) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .content-sp{
+        position: absolute;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box::before, .content-box::after{
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content-innr-sp{
+        position: relative;
+        left: 50%;
+        top: auto;
+        display: inline-block;
+        height: auto;
+        vertical-align: middle;
+        width: 90%;
+        transform: translateX(-50%);
+    }
+    .content-innr{
+        position: relative;
+        left: 50%;
+        width: 90%;
+        height: auto;
+        display: inline-block;
+        max-width: 1000px;
+        vertical-align: middle;
+        transform: translateX(-50%);
+    }
+    .title-content-sp h3{
+        margin-bottom: 5px;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 40px;
+    }
+    .title-content-sp{
+        display: block;
+        text-align: center;
+    }
+    .monitor{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        line-height: 0;
+        overflow: hidden;
+    }
+    .monitor.active{
+        -webkit-animation: scale-monitor;
+        animation: scale-monitor;
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+    }
+    .bg-monitor{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .gif-video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 90%;
+        text-align: center;
+    }
+    .gif-video img{
+        display: block;
+        width: 100%;
+    }
+    .content-innr p{
+        font-family: "SamsungOne", arial;
+        font-size: 18px;
+        display: block;
+        line-height: 1.6;
+        text-align: center;  
+    }
+    .title-slogan{
+        height: 130px;
+        width: 100%;
+        margin: 0 auto;
+        line-height: 130px;
+        padding: 0;
+    }
+    .title-slogan h2{
+        font-size: 36px;
+        max-width: 480px;
+    }
+    .section-inner-sp{
+        width: 100%;
+        height: calc(100vh - 160px);
+    }
+    .box-item-movie{
+        display: block;
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
+    .name-movie{
+        bottom: 100px;
+    }
+    .name-movie p{
+        font-size: 18px;
+    }
+    .name-movie h3{
+        font-size: 36px;
+    }
+    .box-item-movie a::before{
+        display: none;
+    }
+    /* slide 2 */
+    .text-house p{
+        font-size: 18px;
+    }
+    .title-house h3{
+        font-size: 40px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
+        line-height: 1.4;
+    }
+    .text-house{
+        width: 90%;
+    }
+    .back{
+        top: 1%;
+        padding: 20px 30px 20px 30px;
+    }
+    .back span{
+        font-size: 14px;
+    }
+    .back span::before{
+        width: 15px;
+        height: 18px;
+        top: 0;
+        left: -20px;
+    }
+    /*  */
+    .bg-movie{
+        display: none;
+    }
+    .bg-movie-sp{
+        display: block;
+    }
+    .bg-key{
+        display: none;
+    }
+    .bg-key-sp{
+        display: block;
+    }
+    .bg-xac-uop-sp{
+        display: block;
+    }
+    .bg-diep-vien-sp{
+        display: block;
+    }
+    .key{
+        width: 44%;
+        height: 40%;
+    }
+    .btn-360{
+        margin: 10px 0;
+        padding: 20px 30px 20px 60px;
+    }
+    .btn-360 span{
+        font-size: 20px;
+    }
+    .btn-360 span::before{
+        top: -5px;
+        left: -43px;
+        width: 35px;
+        height: 35px;
+    }
+    .content-house{
+        bottom: 7%;
+    }
+    .title-house{
+        top: 10%
+    }
+}
+@media (min-width: 768px) and (max-width:992px){
+    .button-res{
+        width: 46px;
+        height: 46px;
+        display: block;
+    }
+    .button-res div{
+        width: 40px;
+    }
+    .box-order{
+        display: none;
+    }
+    .center{
+        padding: 20px;
+        width: 90%;
+    }
+    .title-location h3{
+        font-size: 24px;
+    }
+    .title-location p{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .icon-location{
+        font-size: 98px;
+    }
+    .position-location p{
+        font-size: 15px;
+    }
+    .location{
+        padding: 20px;
+    }
+    /* nav */
+    .navigation{
+        display: block;
+    }
+    .navigation{
+        position: fixed;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        line-height: 1;
+        text-align: center;
+        z-index: 2;
+        background-color: rgba(0,0,0,1);
+        opacity: 0;
+    }
+    .navigation-active{
+        opacity: 1;
+        top: 0;
+        width: 100%;
+        transition: all 0.5s ease-out;
+    }
+    .nav{
+        position: relative;
+        display: block;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .nav ul{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .nav li{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 25px 0;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        opacity: 0;
+    }
+    .nav li.active{
+        opacity: 1;
+    }
+    
+    .nav li:first-child{
+        margin-bottom: 60px;
+    }
+    .buy-qled{
+        border-radius: 80px;
+        border: 2px solid #fff;
+        padding: 33px 60px 30px 60px;
+    }
+    .nav a{
+        display: inline-block;
+        width: auto;
+        height: auto;    
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+    /* Section 1 */
+    .welcome{
+        width: 90%;
+        height: auto;
+        top: auto;
+        max-width: 1000px;
+        transform: translate3d(0px, 0px, 0px)!important;
+    }
+    .welcome h3{
+        font-size: 40px;
+    }
+    .welcome p{
+        display: none!important;
+    }
+    .join{
+        display: none!important;
+    }
+    .bg-tv{
+        display: none;
+    }
+    .panzoom{
+        position: absolute;
+        left: auto;
+        top: auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-top: 0!important;
+        transform: matrix(3.3, 0, 0, 3.3, 0, 0)!important;
+    }
+    .video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .section-2{
+        display: block;
+    }
+    /* section sp */
+    .section-sp{
+        display: block;
+    }
+    .bg-sp{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../images/intro-sp-bg.png) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .content-sp{
+        position: absolute;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box::before, .content-box::after{
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content-innr-sp{
+        position: relative;
+        left: 50%;
+        top: auto;
+        display: inline-block;
+        height: auto;
+        vertical-align: middle;
+        width: 90%;
+        transform: translateX(-50%);
+    }
+    .content-innr{
+        position: relative;
+        left: 50%;
+        width: 90%;
+        height: auto;
+        display: inline-block;
+        max-width: 1000px;
+        vertical-align: middle;
+        transform: translateX(-50%);
+    }
+    .title-content-sp h3{
+        margin-bottom: 5px;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 40px;
+    }
+    .title-content-sp{
+        display: block;
+        text-align: center;
+    }
+    .monitor{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        line-height: 0;
+        overflow: hidden;
+    }
+    .monitor.active{
+        -webkit-animation: scale-monitor;
+        animation: scale-monitor;
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+    }
+    .bg-monitor{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .gif-video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 90%;
+        text-align: center;
+    }
+    .gif-video img{
+        display: block;
+        width: 100%;
+    }
+    .content-innr p{
+        font-family: "SamsungOne", arial;
+        font-size: 18px;
+        display: block;
+        line-height: 1.6;
+        text-align: center;  
+    }
+    .title-slogan{
+        height: 130px;
+        width: 100%;
+        margin: 0 auto;
+        line-height: 130px;
+        padding: 0;
+    }
+    .title-slogan h2{
+        font-size: 36px;
+        max-width: 480px;
+    }
+    .section-inner-sp{
+        width: 100%;
+        height: calc(100vh - 160px);
+    }
+    .box-item-movie{
+        display: block;
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
+    .name-movie{
+        bottom: 100px;
+    }
+    .name-movie p{
+        font-size: 18px;
+    }
+    .name-movie h3{
+        font-size: 36px;
+    }
+    .box-item-movie a::before{
+        display: none;
+    }
+    /* slide 2 */
+    .text-house p{
+        font-size: 18px;
+    }
+    .title-house h3{
+        font-size: 40px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
+        line-height: 1.4;
+    }
+    .text-house{
+        width: 90%;
+    }
+    .back{
+        top: 1%;
+        padding: 20px 30px 20px 30px;
+    }
+    .back span{
+        font-size: 14px;
+    }
+    .back span::before{
+        width: 15px;
+        height: 18px;
+        top: 0;
+        left: -20px;
+    }
+    /*  */
+    .bg-movie{
+        display: none;
+    }
+    .bg-movie-sp{
+        display: block;
+    }
+    .bg-key{
+        display: none;
+    }
+    .bg-key-sp{
+        display: block;
+    }
+    .bg-xac-uop-sp{
+        display: block;
+    }
+    .bg-diep-vien-sp{
+        display: block;
+    }
+    .key{
+        width: 44%;
+        height: 40%;
+    }
+    .btn-360{
+        margin: 10px 0;
+        padding: 20px 30px 20px 60px;
+    }
+    .btn-360 span{
+        font-size: 20px;
+    }
+    .btn-360 span::before{
+        top: -5px;
+        left: -43px;
+        width: 35px;
+        height: 35px;
+    }
+    .content-house{
+        bottom: 7%;
+    }
+    .title-house{
+        top: 10%
+    }
+}
+@media (min-width: 992px) and (max-width:1024px){
+    .button-res{
+        width: 46px;
+        height: 46px;
+        display: block;
+    }
+    .button-res div{
+        width: 40px;
+    }
+    .box-order{
+        display: none;
+    }
+    .center{
+        padding: 20px;
+        width: 90%;
+    }
+    .title-location h3{
+        font-size: 24px;
+    }
+    .title-location p{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .icon-location{
+        font-size: 98px;
+    }
+    .position-location p{
+        font-size: 15px;
+    }
+    .location{
+        padding: 20px;
+    }
+    /* nav */
+    .navigation{
+        display: block;
+    }
+    .navigation{
+        position: fixed;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        line-height: 1;
+        text-align: center;
+        z-index: 2;
+        background-color: rgba(0,0,0,1);
+        opacity: 0;
+    }
+    .navigation-active{
+        opacity: 1;
+        top: 0;
+        width: 100%;
+        transition: all 0.5s ease-out;
+    }
+    .nav{
+        position: relative;
+        display: block;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .nav ul{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .nav li{
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 25px 0;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        opacity: 0;
+    }
+    .nav li.active{
+        opacity: 1;
+    }
+    
+    .nav li:first-child{
+        margin-bottom: 60px;
+    }
+    .buy-qled{
+        border-radius: 80px;
+        border: 2px solid #fff;
+        padding: 33px 60px 30px 60px;
+    }
+    .nav a{
+        display: inline-block;
+        width: auto;
+        height: auto;    
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 55px;
+        color: #fff;
+        line-height: 1.2;
+        text-decoration: none;
+    }
+    /* Section 1 */
+    .welcome{
+        width: 90%;
+        height: auto;
+        top: auto;
+        max-width: 1000px;
+        transform: translate3d(0px, 0px, 0px)!important;
+    }
+    .welcome h3{
+        font-size: 40px;
+    }
+    .welcome p{
+        display: none!important;
+    }
+    .join{
+        display: none!important;
+    }
+    .bg-tv{
+        display: none;
+    }
+    .panzoom{
+        position: absolute;
+        left: auto;
+        top: auto;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-top: 0!important;
+        transform: matrix(3.3, 0, 0, 3.3, 0, 0)!important;
+    }
+    .video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .section-2{
+        display: block;
+    }
+    /* section sp */
+    .section-sp{
+        display: block;
+    }
+    .bg-sp{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url(../images/intro-sp-bg.png) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .content-sp{
+        position: absolute;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box{
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .content-box::before, .content-box::after{
+        content: '';
+        position: relative;
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .content-innr-sp{
+        position: relative;
+        left: 50%;
+        top: auto;
+        display: inline-block;
+        height: auto;
+        vertical-align: middle;
+        width: 90%;
+        transform: translateX(-50%);
+    }
+    .content-innr{
+        position: relative;
+        left: 50%;
+        width: 90%;
+        height: auto;
+        display: inline-block;
+        max-width: 1000px;
+        vertical-align: middle;
+        transform: translateX(-50%);
+    }
+    .title-content-sp h3{
+        margin-bottom: 5px;
+        font-family: "iCielSamsungSharpSansBold", arial;
+        font-size: 40px;
+    }
+    .title-content-sp{
+        display: block;
+        text-align: center;
+    }
+    .monitor{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        line-height: 0;
+        overflow: hidden;
+    }
+    .monitor.active{
+        -webkit-animation: scale-monitor;
+        animation: scale-monitor;
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+    }
+    .bg-monitor{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .gif-video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 90%;
+        text-align: center;
+    }
+    .gif-video img{
+        display: block;
+        width: 100%;
+    }
+    .content-innr p{
+        font-family: "SamsungOne", arial;
+        font-size: 18px;
+        display: block;
+        line-height: 1.6;
+        text-align: center;  
+    }
+    .title-slogan{
+        height: 130px;
+        width: 100%;
+        margin: 0 auto;
+        line-height: 130px;
+        padding: 0;
+    }
+    .title-slogan h2{
+        font-size: 36px;
+        max-width: 480px;
+    }
+    .section-inner-sp{
+        width: 100%;
+        height: calc(100vh - 160px);
+    }
+    .box-item-movie{
+        display: block;
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
+    .name-movie{
+        bottom: 100px;
+    }
+    .name-movie p{
+        font-size: 18px;
+    }
+    .name-movie h3{
+        font-size: 36px;
+    }
+    .box-item-movie a::before{
+        display: none;
+    }
+    /* slide 2 */
+    .text-house p{
+        font-size: 18px;
+    }
+    .title-house h3{
+        font-size: 40px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
+        line-height: 1.4;
+    }
+    .text-house{
+        width: 90%;
+    }
+    .back{
+        top: 1%;
+        padding: 20px 30px 20px 30px;
+    }
+    .back span{
+        font-size: 14px;
+    }
+    .back span::before{
+        width: 15px;
+        height: 18px;
+        top: 0;
+        left: -20px;
+    }
+    /*  */
+    .bg-movie{
+        display: none;
+    }
+    .bg-movie-sp{
+        display: block;
+    }
+    .bg-key{
+        display: none;
+    }
+    .bg-key-sp{
+        display: block;
+    }
+    .bg-xac-uop-sp{
+        display: block;
+    }
+    .bg-diep-vien-sp{
+        display: block;
+    }
+    .key{
+        width: 44%;
+        height: 40%;
+    }
+    .btn-360{
+        margin: 10px 0;
+        padding: 20px 30px 20px 60px;
+    }
+    .btn-360 span{
+        font-size: 20px;
+    }
+    .btn-360 span::before{
+        top: -5px;
+        left: -43px;
+        width: 35px;
+        height: 35px;
+    }
+    .content-house{
+        bottom: 7%;
+    }
+    .title-house{
+        top: 10%
+    }
+}
+
 
 
 
