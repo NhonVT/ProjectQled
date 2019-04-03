@@ -250,7 +250,7 @@ body{
     text-align: center;
     bottom: 33px;
     left: 0;
-    z-index: 3;
+    z-index: 0;
 }
 .scroll-down a{
     display: block;
@@ -273,8 +273,8 @@ body{
 }
 .logo-fim{
     position: absolute;
-    top: 25px;
-    right: 85px;
+    top: 93px;
+    right: 80px;
     width: 75px;
     height: auto;
     display: none;
@@ -282,6 +282,16 @@ body{
 .logo-fim img{
     display: inline-block;
     width: 100%;
+}
+.logo-fim-small{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: url(../images/logo_fimplus.png) no-repeat;
+    background-size: contain;
+    background-position: right top;
+    width: 50px;
+    height: 30px;
 }
 .sound{
     position: absolute;
@@ -850,6 +860,15 @@ body{
 
 /* Responsive */
 @media (max-width:576px){
+    .sound{
+        display: none!important;
+    }
+    .logo-fim{
+        display: none!important;
+    }
+    .logo-fimplus{
+        display: block;
+    }
     .button-res{
         display: block;
     }
@@ -975,10 +994,9 @@ body{
         width: 100%;
         height: 100%;
         margin-top: 0!important;
-        transform: matrix(3.3, 0, 0, 3.3, 0, 0)!important;
+        transform: matrix(3, 0, 0, 3.3, 0, 0)!important;
     }
     .video{
-        position: absolute;
         width: 100%;
         height: 100%;
         left: 0;
@@ -1048,8 +1066,8 @@ body{
     .monitor.active{
         -webkit-animation: scale-monitor;
         animation: scale-monitor;
-        -webkit-animation-duration:1s;
-        animation-duration:1s;
+        -webkit-animation-duration:1.5s;
+        animation-duration:1.5s;
         -webkit-animation-fill-mode:forwards;
         animation-fill-mode:forwards;
     }
@@ -1177,6 +1195,14 @@ body{
 }
 
 @media (min-width: 576px) and (max-width: 768px){
+    .sound{
+        display: none!important;
+    }
+    .logo-fim{
+        top: 80px;
+        right: 13px;
+        width: 40px;
+    }
     .button-res{
         width: 46px;
         height: 46px;
@@ -1532,6 +1558,14 @@ body{
     }
 }
 @media (min-width: 768px) and (max-width:992px){
+    .sound{
+        display: none!important;
+    }
+    .logo-fim{
+        top: 80px;
+        right: 13px;
+        width: 40px;
+    }
     .button-res{
         width: 46px;
         height: 46px;
@@ -1887,6 +1921,15 @@ body{
     }
 }
 @media (min-width: 992px) and (max-width:1024px){
+    .sound{
+        display: none!important;
+    }
+    .logo-fim{
+        top: 80px;
+        right: 13px;
+        width: 40px;
+        display: none;
+    }
     .button-res{
         width: 46px;
         height: 46px;
