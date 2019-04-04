@@ -373,19 +373,6 @@ var movie = $('.movie');
         $('.bg-key[data-movie='+keepattr+']').trigger('click');
     });
 
-    // $('.none-mute').click(function(){
-    //     $(this).fadeOut(200);
-    //     $('.mute').fadeIn(300);
-    //     vid.prop('mute',true);
-        
-    // });
-
-    // $('.mute').click(function(){
-    //     $(this).fadeOut(200);
-    //     $('.none-mute').fadeIn(200);
-    //     vid.prop('mute',false);
-    // });
-
     $('.none-mute').click(function(){
         // $('.none-mute').addClass('hide');
         $('.mute').addClass('active');
