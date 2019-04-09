@@ -62,65 +62,71 @@ var movie = $('.movie');
     
     })(jQuery);
 
-
-(function(){
-  
-    /* Full Page*/
-    $('#fullpage').fullpage({
-		//options here
-        lockAnchors: false,
-        slidesNavigation: true,
-        scrollingSpeed: 800,
-        autoScrolling:true,
-        scrollBar: false,
-        fitToSection: true,
-        onLeave: function(origin, nextIndex, direction) {
-            
-            if($(window).width() > 1024){
-                if (nextIndex == 1) { 
-                    if(vid.paused){
-                        vid.play();
-                    }
-                }
-                //cancel scroll when to 
-                if(nextIndex == 2){
-                    return false;
-                }
-                return false;
-            }else if($(window).width() <= 1024){
-                if(!scrolling){
-                    
-                    return false;
-                }else{
-                   
+function fullPage(){
+        /* Full Page*/
+        $('#fullpage').fullpage({
+            //options here
+            lockAnchors: false,
+            slidesNavigation: true,
+            scrollingSpeed: 800,
+            autoScrolling:true,
+            scrollBar: false,
+            fitToSection: true,
+            onLeave: function(origin, nextIndex, direction) {
+                
+                if($(window).width() > 1024){
                     if (nextIndex == 1) { 
-                        $('.scroll-down').fadeIn(100);
-                        
                         if(vid.paused){
                             vid.play();
                         }
                     }
+                    //cancel scroll when to 
                     if(nextIndex == 2){
-                        $('.scroll-down').fadeOut(100);
-                        $('.monitor').addClass('active');
-                    }
-                    if(nextIndex == 3){
-                        $('.scroll-down').fadeOut(100);
-                    }
-                    if(nextIndex == 4){
                         return false;
                     }
-                }      
+                    return false;
+                }else if($(window).width() <= 1024){
+                    if(!scrolling){
+                        
+                        return false;
+                    }else{
+                       
+                        if (nextIndex == 1) { 
+                            $('.scroll-down').fadeIn(100);
+                            
+                            if(vid.paused){
+                                vid.play();
+                            }
+                        }
+                        if(nextIndex == 2){
+                            $('.scroll-down').fadeOut(100);
+                            $('.monitor').addClass('active');
+                        }
+                        if(nextIndex == 3){
+                            $('.scroll-down').fadeOut(100);
+                        }
+                        if(nextIndex == 4){
+                            return false;
+                        }
+                    }      
+                }
+                scrolling = true;
             }
-            scrolling = true;
+        });
+        if($(window).width() > $(window).height() && $(window).width() <= 1100){
+            $('#fullpage').fullpage.setAutoScrolling(false);
+        }else{ 
+            $('#fullpage').fullpage.setAutoScrolling(true);
         }
-    });
-    
-    if($(window).width() > $(window).height() && $(window).width() <= 1100){
-        $('#fullpage').fullpage.setAutoScrolling(false);
-    }else{ 
-        $('#fullpage').fullpage.setAutoScrolling(true);
+}
+
+
+(function(){
+
+    if($('#homepage').length){
+        fullPage();
     }
+  
     // mute sp
     if($(window).width() <= 1024){
         $('#myVideo').prop('muted',true);
@@ -389,6 +395,19 @@ var movie = $('.movie');
     // nav
     navSilde();
 
+    if($('#detail-page').length){
+        $('.playvr-banner').click(function(){
+            $('.wrap-video').addClass('scaleOut');
+            $('.bg-vr').addClass('hide');
+            player.play();
+        })
+        $('.skip').click(function(){
+            $('.wrap-video').removeClass('scaleOut');
+            $('.wrap-video').addClass('scaleIn');
+            $('.bg-vr').removeClass('hide');
+            player.pause();
+        });
+    }
    
 
 
@@ -419,6 +438,8 @@ function navSilde(){
         }
 
         // scroll
+
+        
         
 
         // Animaton Links
